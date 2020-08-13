@@ -1,0 +1,65 @@
+<div class="container mt-5">
+    <form [formGroup]="formularioRutina" action="">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="">Nombre</label>
+                    <input type="text" class="form-control" formControlName="nombre"
+                     placeholder="Agregar Nombre" [(ngModel)]='nombreImagen'>
+                    <div *ngIf="formularioRutina.controls['nombre'].invalid && formularioRutina.controls['nombre'].dirty" class="alert alert-danger" role="alert">
+                        <span *ngIf="formularioRutina.controls['nombre'].errors.required">  Nombre es requerido</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="">Tipo</label>
+                    <input type="text" class="form-control" formControlName="tipo"  placeholder="Agregar Tipo">
+                    <div *ngIf="formularioRutina.controls['tipo'].invalid && formularioRutina.controls['tipo'].dirty" class="alert alert-danger" role="alert">
+                        <span *ngIf="formularioRutina.controls['tipo'].errors.required">  Tipo es requerido</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="">Nivel</label>
+                    <select class="form-control" formControlName="nivel" name="" id="">
+                        <option value="1">Basico</option>
+                        <option value="2">Intermedio</option>
+                        <option value="3">Avanzado</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="">Descripcion</label>
+                    <textarea type="text" class="form-control" formControlName="descripcion"  placeholder="Agregar descripcion" cols="30" rows="10"></textarea>
+                    <div *ngIf="formularioRutina.controls['descripcion'].invalid && formularioRutina.controls['descripcion'].dirty" class="alert alert-danger" role="alert">
+                        <span *ngIf="formularioRutina.controls['descripcion'].errors.required">  Descripcion es requerido</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 text-center">
+                <div class="form-group">
+                    <label for="">Imagen</label>
+                    <input type="file" (change)="subirImagen($event)" class="form-control-file" formControlName="imgRutina"  placeholder="Agregar Imagen">
+                    <div *ngIf="formularioRutina.controls['imgRutina'].invalid && formularioRutina.controls['imgRutina'].dirty" class="alert alert-danger" role="alert">
+                        <span *ngIf="formularioRutina.controls['imgRutina'].errors.required">  La imagen es requerida</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <progressbar [value]="porcentajeSubida" type="warning" [striped]="true">{{porcentajeSubida}}%</progressbar>
+            </div>
+        </div>
+        <br>
+        <button class="btn btn-primary " (click)="agregar()">Registrar</button>
+    </form>
+</div>

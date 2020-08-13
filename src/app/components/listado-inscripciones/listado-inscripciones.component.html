@@ -1,0 +1,23 @@
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Cliente</th>
+            <th scope="col">Fecha Inicio</th>
+            <th scope="col">Fecha Final</th>
+            <th scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let inscripcion of inscripciones">
+            <th scope="row">{{inscripcion.clienteObtenido.nombre}} {{inscripcion.clienteObtenido.apellido}}</th>
+            <td>{{inscripcion.fecha | date}}</td>
+            <td>{{inscripcion.fechaFinal | date}}</td>
+            <td>
+              <button [routerLink] ="['/inscripcion/',inscripcion.id]" type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
+            <button (click)="borrarInscripcion($event,inscripcion)" type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+          </td>
+          </tr>
+        </tbody>
+      </table>
+</div>

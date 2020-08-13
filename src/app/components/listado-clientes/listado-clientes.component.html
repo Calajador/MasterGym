@@ -1,0 +1,24 @@
+<div class="container mt-5">
+    <h4 class="mb-3">Listado de CLientes</h4>
+
+    <form action="" class="mb-3">
+        <div class="form-group">
+            <input class="form-control" type="text" placeholder="Buscar Cliente">
+        </div>
+    </form>
+
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let cliente of clientes">
+        <div class="card" >
+            <img class="card-img-top" [src]="cliente.imgURL" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{cliente.nombre}} {{cliente.apellido}}</h5>
+              <p class="card-text">{{cliente.telefono}}</p>
+              <p class="card-text">{{cliente.correo}}</p>
+              <p class="card-text">{{cliente.id}}</p>
+              <button class="btn btn-danger" (click)="borrarCliente($event, cliente)" >Eliminar</button>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

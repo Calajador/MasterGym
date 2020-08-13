@@ -1,0 +1,30 @@
+<div class="container" id="contenedor">
+
+    <div class="text-center mt-3">
+        <img  src="assets/img/logo.jpg" alt="" class="logo mb-2">
+        <h3>Justificante Inscripcion</h3>
+    </div>
+
+    <br>
+    <div class="row">
+        <div class="col-sm-6" style="text-align: center;">
+            
+                <p><strong>Nombre: </strong>{{_ins.inscripcionDoc.clienteObtenido.nombre}} {{_ins.inscripcionDoc.clienteObtenido.apellido}}</p>
+                <p><strong>Fecha Inicio: </strong>{{_ins.inscripcionDoc.fecha | date}}</p>
+                <p><strong>Fecha Fin: </strong>{{_ins.inscripcionDoc.fechaFinal | date}}</p>
+            
+        </div>
+        <div class="col-sm-6" style="text-align: center;">
+            
+                <p><strong>Precio: </strong>{{_ins.inscripcionDoc.precioObtenido.costo}}</p>
+                <p><strong>IVA: </strong>{{_ins.inscripcionDoc.iva}}</p>
+                <p><strong>Total: </strong>{{_ins.inscripcionDoc.total}}</p>
+            
+        </div>
+    </div>
+
+</div>
+
+<div class="text-center mt-4">
+    <button class="btn btn-info" (click)="generarPDF()">Descargar</button>
+</div>

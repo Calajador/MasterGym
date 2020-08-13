@@ -1,0 +1,55 @@
+<div class="container mt-5">
+    <h2 class="mb-3">Listado de Rutinas</h2>
+
+
+    <div class="mt-5">
+        <h3>Nivel Básico</h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-4" *ngFor="let rutina of rutinasBasicas">
+            <div class="card text-white bg-primary" >
+                <img class="card-img-top" [src]="rutina.imgRutina" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{rutina.nombre}}</h5>
+                  <p class="card-text"><strong>TIPO: </strong>{{rutina.tipo}}</p>
+                  <p class="card-text"><strong>Descripción: </strong>{{rutina.descripcion}}</p>
+                  <button class="btn btn-danger" (click)="borrarRutina($event, rutina)" >Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <h3>Nivel Intermedio</h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-4" *ngFor="let rutina of rutinasIntermedias">
+            <div class="card text-white bg-success" >
+                <img class="card-img-top" [src]="rutina.imgRutina" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{rutina.nombre}}</h5>
+                  <p class="card-text"><strong>TIPO: </strong>{{rutina.tipo}}</p>
+                  <p class="card-text"><strong>Descripción: </strong>{{rutina.descripcion}}</p>
+                  <button class="btn btn-danger" (click)="borrarRutina($event, rutina)" >Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <h3>Nivel Avanzado</h3>
+    </div>
+    <div class="row mb-5">
+        <div class="col-sm-4" *ngFor="let rutina of rutinasAnavzadas">
+            <div class="card text-white bg-warning" >
+                <img class="card-img-top" [src]="rutina.imgRutina" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{rutina.nombre}}</h5>
+                  <p class="card-text"><strong>TIPO: </strong>{{rutina.tipo}}</p>
+                  <p class="card-text"><strong>Descripción: </strong>{{rutina.descripcion}}</p>
+                  <button class="btn btn-danger" (click)="borrarRutina($event, rutina)" >Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
