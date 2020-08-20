@@ -9,13 +9,12 @@
 
   <div class="row">
     <div class="col-sm-3" *ngFor="let cliente of clientes">
-        <div class="card" >
+        <div class="card border-light" >
             <img class="card-img-top" [src]="cliente.imgURL" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">{{cliente.nombre}} {{cliente.apellido}}</h5>
               <p class="card-text">{{cliente.telefono}}</p>
               <p class="card-text">{{cliente.correo}}</p>
-              <p class="card-text">{{cliente.id}}</p>
               <button class="btn btn-danger" (click)="borrarCliente($event, cliente)" >Eliminar</button>
             </div>
         </div>
