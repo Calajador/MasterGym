@@ -81,4 +81,20 @@
   .rectbrown:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
   }
+
+  .rectblack {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+  }
   
+  .rectblack:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+  }
+  
+
+  h1 {
+    padding: 25px;
+  }
